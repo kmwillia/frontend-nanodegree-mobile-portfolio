@@ -1,0 +1,5 @@
+Page Speed - https://developers.google.com/speed/pagespeed/insights/
+
+translate over top/left - http://www.paulirish.com/2012/why-moving-elements-with-translate-is-better-than-posabs-topleft/
+
+Jank Free - http://jankfree.org/
