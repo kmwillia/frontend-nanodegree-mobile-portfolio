@@ -7,10 +7,26 @@
     <meta name="author" content=" FILL ME IN ">
     <title>Cameron Pittman: Portfolio</title>
 
-    <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <!-- Inline CSS -->
     <style>
+        /* latin */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v10/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
         html {
             font-size: 100%;
             overflow-y: scroll;
@@ -60,25 +76,38 @@
             body { font-size: 12px;}
             header p { padding-left: 4.5em;}
         }
+
+        @media print {
+            * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
+            a, a:visited { color: #444 !important; text-decoration: underline; }
+            a[href]:after { content: " (" attr(href) ")"; }
+            tr, img { page-break-inside: avoid; }
+            img { max-width: 100% !important; }
+            @page { margin: 0.5cm; }
+            p, h2, h3 { orphans: 3; widows: 3; }
+            h2, h3{ page-break-after: avoid; }
+        }
+
     </style>
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
-    <link href="css/print.css" rel="stylesheet">
-
+    <script async src="http://www.google-analytics.com/analytics.js"></script>
     <script>
-      // (function(w,g){w['GoogleAnalyticsObject']=g;
-      // w[g]=w[g]||function(){(w[g].q=w[g].q||[]).push(arguments)};w[g].l=1*new Date();})(window,'ga');
+        function logCRP() {
+            var t = window.performance.timing,
+            dcl = t.domContentLoadedEventStart - t.domLoading,
+            complete = t.domComplete - t.domLoading;
+            var stats = document.getElementById("crp-stats");
+            stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
+        }
 
-      // // TODO: replace with your Google Analytics profile ID.
-      // ga('create', 'UA-XXXX-Y');
-      // ga('send', 'pageview');
+        window.addEventListener("load", function(event) {
+            logCRP();
+        });
     </script>
-    <script src="http://www.google-analytics.com/analytics.js"></script>
-    <script async src="js/perfmatters.js"></script>
   </head>
 
   <body>
     <header>
-      <a href="/"><img src="img/profilepic.jpg"></a>
+      <a href="/"><img src="img/profilepic.png" width="70" height="70"></a>
       <p>Cameron Pittman<br><span>Course Developer</span></p>
     </header>
 
@@ -108,7 +137,7 @@
           </li>
 
           <li>
-            <img style="width: 100px;" src="views/images/pizzeria.jpg">
+            <img src="views/images/pizzeria_thumb.png" width="100" height="75">
             <a href="views/pizza.html">Cam's Pizzeria</a>
             <p>Who wants a performant pizza?</p>
           </li>
