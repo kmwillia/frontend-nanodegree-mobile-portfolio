@@ -21,7 +21,7 @@ Some useful tips to help you get started:
 
 1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights!
 
-#### Part 1: Optimize PageSpeed Insights score for index.html
+#### Part 1: Optimize PageSpeed Insights score for index.min.html
 
 ##### Criteria:
 - PageSpeed score >= 90
